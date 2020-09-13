@@ -6,6 +6,8 @@ import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
 import Additional from "./panels/Additional";
+import Persik from './panels/Persik';
+import CollectionType from "./panels/CollectionType";
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
@@ -36,6 +38,7 @@ const App = () => {
 		<View activePanel={activePanel} popout={popout}>
 			<Home id='home' go={go} />
 			<Additional id='additional' go={go} />
+			<CollectionType id='ctype' go={go}/>
 		</View>
 	);
 }

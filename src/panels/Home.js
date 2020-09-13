@@ -9,7 +9,7 @@ const Home = ({ id, go}) => (
 	<Panel id={id}>
 		<PanelHeader>Пожертвования</PanelHeader>
 		<Placeholder
-			action={<Button size="l">Создать сбор</Button>}
+			action={<Button size="l" onClick={go} data-to={"ctype"}>Создать сбор</Button>}
 			stretched
 		>
 			    У вас пока нет сборов. <br />
