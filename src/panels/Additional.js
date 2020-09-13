@@ -12,15 +12,16 @@ import Input from "@vkontakte/vkui/dist/components/Input/Input";
 import FixedLayout from "@vkontakte/vkui/dist/components/FixedLayout/FixedLayout";
 import Separator from "@vkontakte/vkui/dist/components/Separator/Separator";
 
-const Additional = ({ id, go}) => (
+const Additional = ({id, go, fetchedUser}) => (
     <Panel id={id}>
-        <PanelHeader left={<PanelHeaderBack onClick={go} data-to="home"/>}>
+        <PanelHeader left={<PanelHeaderBack onClick={go} data-to="collection"/>}
+                     className='panel'>
             Дополнительно
         </PanelHeader>
 
         <FormLayout>
             <Select top="Автор" placeholder="Выберите автора">
-                <option value="m">Матвей Правосудов</option>
+                <option value="m">{fetchedUser.first_name} {fetchedUser.last_name}</option>
                 <option value="f">Кто-то еще</option>
             </Select>
 
@@ -30,11 +31,11 @@ const Additional = ({ id, go}) => (
             </FormLayoutGroup>
 
             <FormLayoutGroup top="Дата окончания">
-                <Input type="date" defaultValue="Выберите дату" />
+                <Input type="date" defaultValue="Выберите дату"/>
             </FormLayoutGroup>
             <FixedLayout vertical="bottom">
                 <Button size="xl">Создать сбор</Button>
-                <Separator style={{ margin: '12px 0' }} />
+                <Separator style={{margin: '12px 0'}}/>
             </FixedLayout>
         </FormLayout>
     </Panel>
@@ -43,6 +44,14 @@ const Additional = ({ id, go}) => (
 Additional.propTypes = {
     id: PropTypes.string.isRequired,
     go: PropTypes.func.isRequired,
+    fetchedUser: PropTypes.shape({
+        photo_200: PropTypes.string,
+        first_name: PropTypes.string,
+        last_name: PropTypes.string,
+        city: PropTypes.shape({
+            title: PropTypes.string,
+        }),
+    }),
 };
 
 export default Additional;

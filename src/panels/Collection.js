@@ -19,6 +19,7 @@ const Collection = ({id, go, fetchedUser}) => (
         <FormLayout>
 
             <File
+                accept="image/*"
                 className="uploader"
                 mode="secondary"
                 before={<Icon56GalleryOutline/>}
