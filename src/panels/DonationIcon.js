@@ -32,7 +32,8 @@ class DonationIcon extends React.Component {
                          style={{
                              width: 351,
                              height: 140,
-                             position: 'center'
+                             position: 'relative',
+                             left: 10
                          }}
                     />
                 </CellButton>
