@@ -12,13 +12,11 @@ const MyProgress = ({ id, go, fetchedUser }) => (
             <Group>
             <Div style={{width: "100%"}}>
                 <InfoRow header="Помогите первым">
-                    <Progress value={40} />
+                    <Progress value={0} />
                 </InfoRow>
             </Div>
-        </Group>}>
-            <Div style={{align: "right",  display: 'flex', marginWidth: "20px auto" }}>
-            <Button  mode="secondary">Помочь</Button>
-            </Div>
+        </Group>} indicator={
+            <Button  mode="outline">Помочь</Button>}>
         </Cell>
     </Panel>
 );
