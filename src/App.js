@@ -8,6 +8,7 @@ import Home from './panels/Home';
 import Additional from "./panels/Additional";
 import TargetDonation from "./panels/TargetDonation";
 import CollectionType from "./panels/CollectionType";
+import Preview from "./panels/Preview";
 import RegularDonation from "./panels/RegularDonation";
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
 			<CollectionType id='ctype' go={go} fetchedUser={fetchedUser} />
 			<TargetDonation id="targetDonation" go={go} fetchedUser={fetchedUser} />
 			<RegularDonation id='regularDonation' go={go} fetchedUser={fetchedUser} />
+			<Preview id={"preview"} go={go} fetchedUser={fetchedUser} />
 		</View>
 	);
 }

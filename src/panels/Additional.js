@@ -11,6 +11,7 @@ import Radio from "@vkontakte/vkui/dist/components/Radio/Radio";
 import Input from "@vkontakte/vkui/dist/components/Input/Input";
 import FixedLayout from "@vkontakte/vkui/dist/components/FixedLayout/FixedLayout";
 import Separator from "@vkontakte/vkui/dist/components/Separator/Separator";
+import SimpleCell from "@vkontakte/vkui/dist/components/SimpleCell/SimpleCell";
 
 const Additional = ({id, go, fetchedUser}) => (
     <Panel id={id}>
@@ -34,7 +35,7 @@ const Additional = ({id, go, fetchedUser}) => (
                 <Input type="date" defaultValue="Выберите дату"/>
             </FormLayoutGroup>
             <FixedLayout vertical="bottom">
-                <Button size="xl">Создать сбор</Button>
+                <Button size="xl" onClick={go} data-to="preview">Создать сбор</Button>
                 <Separator style={{margin: '12px 0'}}/>
             </FixedLayout>
         </FormLayout>
