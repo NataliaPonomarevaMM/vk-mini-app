@@ -33,7 +33,7 @@ class TargetDonation extends React.Component {
                 </PanelHeader>
                 <FormLayout>
 
-                    <DonationIcon go={go} id='icon'/>
+                    <DonationIcon/>
 
                     <Input
                         type="name"
@@ -90,7 +90,8 @@ class TargetDonation extends React.Component {
                             donation.sum = this.sum;
                             console.log(donation)
                             setDonation(donation);
-                            go(e);}} data-to="additional"
+                            go(e);
+                        }} data-to="additional"
                     >
                         Далее
                     </Button>

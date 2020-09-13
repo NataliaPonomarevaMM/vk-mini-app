@@ -26,49 +26,60 @@ class DonationIcon extends React.Component {
     }
 
     render() {
-        return (
-            <View activePanel={this.state.activePanel}>
-                <Panel id="choose">
-                    <File
-                        accept="image/*"
-                        className="uploader"
-                        mode="secondary"
-                        before={<Icon56GalleryOutline/>}
-                        controlSize="xl"
-                        onChange={this.handleChange}
-                    >
-                        Загрузить обложку
-                    </File>
-                </Panel>
-                <Panel id="demo">
-                    <Group>
-                        <CellButton onClick={() => this.setState({activePanel: 'choose', file: null})}>
-                            <img src={this.state.file}
-                                 alt='HTML5'
-                                 style={{width: 200, height: 200, top: this.props.top, left: this.props.left}}
-                            />
-                        </CellButton>
-                    </Group>
-                </Panel>
-            </View>
-        )
+        if (this.state.file) {
+            return (
+                <CellButton onClick={() => this.setState({activePanel: 'choose', file: null})}>
+                    <img src={this.state.file}
+                         alt='HTML5'
+                         style={{
+                             width: 351,
+                             height: 140,
+                             position: 'center'
+                         }}
+                    />
+                </CellButton>
+            )
+        } else {
+            return (
+                <File
+                    accept="image/*"
+                    className="uploader"
+                    mode="secondary"
+                    before={<Icon56GalleryOutline/>}
+                    controlSize="xl"
+                    onChange={this.handleChange}
+                >
+                    Загрузить обложку
+                </File>
+            )
+        }
+        // return (
+        //     <View activePanel={this.state.activePanel} >
+        //         <Panel id="choose">
+        //             <File
+        //                 accept="image/*"
+        //                 className="uploader"
+        //                 mode="secondary"
+        //                 before={<Icon56GalleryOutline/>}
+        //                 controlSize="xl"
+        //                 onChange={this.handleChange}
+        //             >
+        //                 Загрузить обложку
+        //             </File>
+        //         </Panel>
+        //         <Panel id="demo">
+        //             <Group>
+        //                 <CellButton onClick={() => this.setState({activePanel: 'choose', file: null})}>
+        //                     <img src={this.state.file}
+        //                          alt='HTML5'
+        //                          style={{width: 351, height: 140}}
+        //                     />
+        //                 </CellButton>
+        //             </Group>
+        //         </Panel>
+        //     </View>
+        // )
     }
 }
 
 export default DonationIcon
-
-DonationIcon.propTypes = {
-    id: PropTypes.string.isRequired,
-    go: PropTypes.func.isRequired,
-    fetchedUser: PropTypes.shape({
-        photo_200: PropTypes.string,
-        first_name: PropTypes.string,
-        last_name: PropTypes.string,
-        city: PropTypes.shape({
-            title: PropTypes.string,
-        }),
-    }),
-    loadImage: PropTypes.shape({
-        photo: PropTypes.any,
-    })
-};

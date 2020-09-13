@@ -19,7 +19,7 @@ const RegularDonation = ({id, go, fetchedUser}) => (
         </PanelHeader>
         <FormLayout>
 
-            <DonationIcon go={go} id='icon'/>
+            <DonationIcon/>
 
             <Input
                 type="name"
