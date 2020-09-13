@@ -4,10 +4,7 @@ import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
 import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import { PanelHeaderBack } from '@vkontakte/vkui';
-import { FormLayout, FormLayoutGroup, Input, Select, Textarea, Checkbox, Link} from '@vkontakte/vkui';
-
-
-import './Home.css'
+import { FormLayout, Input, Select, Textarea, Checkbox, Link} from '@vkontakte/vkui';
 
 const Collection = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
@@ -19,41 +16,36 @@ const Collection = ({ id, go, fetchedUser }) => (
 		</PanelHeader>
 		<FormLayout>
 			<Input
-				type="email"
-				top="E-mail"
-				name="email"
-				value={""}
-				onChange={""}
-				status={"email" ? 'valid' : 'error'}
-				bottom={"email" ? 'Электронная почта введена верно!' : 'Пожалуйста, введите электронную почту'}
+				type="name"
+				top="Название сбора"
+				placeholder="Название сбора"
 			/>
 
-			<FormLayoutGroup top="Пароль" bottom="Пароль может содержать только латинские буквы и цифры.">
-				<Input type="password"  placeholder="Введите пароль" />
-				<Input type="password" placeholder="Повторите пароль" />
-			</FormLayoutGroup>
+			<Input
+				type="sum"
+				top="Сумма, ₽"
+				placeholder="Сколько нужно собрать?"
+			/>
 
-			<Input top="Имя" />
-			<Input top="Фамилия" />
+			<Input
+				type="purpose"
+				top="Цель"
+				placeholder="Например, лечение человека"
+			/>
 
-			<Select top="Пол" placeholder="Выберите пол">
-				<option value="m">Мужской</option>
-				<option value="f">Женский</option>
-			</Select>
+			<Textarea
+				top="Описание"
+				placeholder="На что пойдут деньги и как они кому-то помогут?"
+			/>
 
 			<Select
-				top="Цель поездки"
-				placeholder="Выберите цель поездки"
+				top="Куда получать деньги"
 			>
-				<option value="0">Бизнес или работа</option>
-				<option value="1">Индивидуальный туризм</option>
-				<option value="2">Посещение близких родственников</option>
+				<option value="0">Счет VK Pay * 1234</option>
+				<option value="1">Карта * 1337</option>
 			</Select>
 
-			<Textarea top="О себе" />
-
-			<Checkbox>Согласен со всем <Link>этим</Link></Checkbox>
-			<Button size="xl">Зарегистрироваться</Button>
+			<Button size="xl">Далее</Button>
 		</FormLayout>
 	</Panel>
 );

@@ -6,7 +6,6 @@ import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
 import Additional from "./panels/Additional";
-import Persik from './panels/Persik';
 import Collection from "./panels/Collection";
 import CollectionType from "./panels/CollectionType";
 
@@ -37,11 +36,9 @@ const App = () => {
 
 	return (
 		<View activePanel={activePanel} popout={popout}>
-			<Home id='home' go={go} />
+			<Home id='home' fetchedUser={fetchedUser} go={go} />
 			<Additional id='additional' go={go} />
 			<CollectionType id='ctype' go={go}/>
-			<Home id='home' fetchedUser={fetchedUser} go={go} />
-			<Persik id='persik' go={go} />
 			<Collection id='collection' go={go} />
 		</View>
 	);
