@@ -6,7 +6,7 @@ import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import { PanelHeaderBack } from '@vkontakte/vkui';
 import { FormLayout, Input, Select, Textarea, File} from '@vkontakte/vkui';
 import Banner from "@vkontakte/vkui/dist/components/Banner/Banner";
-
+import Icon56GalleryOutline from '@vkontakte/icons/dist/56/gallery_outline';
 import icon from '../img/imageIcon.png';
 
 const Collection = ({ id, go, fetchedUser }) => (
@@ -33,7 +33,7 @@ const Collection = ({ id, go, fetchedUser }) => (
 				actions={
 					<File
 						mode="secondary"
-						before={<img className="icon" src={icon} alt=""/>}
+						before={<Icon56GalleryOutline/>}
 						controlSize="s">
 						Загрузить обложку
 					</File>
