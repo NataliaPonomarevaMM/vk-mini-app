@@ -7,27 +7,29 @@ import Group from '@vkontakte/vkui/dist/components/Group/Group';
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
+import Placeholder from "@vkontakte/vkui/dist/components/Placeholder/Placeholder";
+import Text from "@vkontakte/vkui/dist/components/Typography/Text/Text";
+
+import './Home.css'
+import {FixedLayout} from "@vkontakte/vkui";
 
 const Home = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
-		<PanelHeader>Example</PanelHeader>
-		{fetchedUser &&
-		<Group title="User Data Fetched with VK Bridge">
-			<Cell
-				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-			>
-				{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-			</Cell>
-		</Group>}
-
-		<Group title="Navigation Example">
-			<Div>
-				<Button size="xl" level="2" onClick={go} data-to="persik">
-					Show me the Persik, please  gdghe
-				</Button>
-			</Div>
-		</Group>
+		<PanelHeader>Пожертвования</PanelHeader>
+		<Placeholder
+			action={<Button size="l">Создать сбор</Button>}
+			stretched
+		>
+			    У вас пока нет сборов. <br />
+				Начните доброе дело.
+		</Placeholder>
+				{/*<Div className="Text">У вас пока нет сборов.</Div>*/}
+				{/*<Text className="Text">Начните доброе дело.</Text>*/}
+				{/*<Div className="Button">*/}
+				{/*	<Button className="Button2">*/}
+				{/*		Hello*/}
+				{/*	</Button>*/}
+				{/*</Div>*/}
 	</Panel>
 );
 

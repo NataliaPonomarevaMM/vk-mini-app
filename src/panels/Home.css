@@ -1,0 +1,90 @@
+.Pers2 {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+
+    position: absolute;
+    width: 375px;
+    height: 196px;
+    left: 0px;
+    top: calc(50% - 196px/2);
+}
+
+.Pers3 {
+    display: flex;
+    flex-direction: column;
+    padding: 48px 32px;
+
+    position: static;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    margin: 0px 0px;
+}
+
+.Button {
+    /* Show/Hide Button */
+
+    position: static;
+    width: 133px;
+    height: 36px;
+    left: 32px;
+    top: 96px;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 3;
+    margin: 0px 8px;
+}
+
+.Button2 {
+    /* Button / Size 2: Medium / Size Y: Regular / Style 1: Primary */
+
+    /* Auto Layout */
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+
+    position: absolute;
+    width: 217px;
+    height: 36px;
+    left: calc(50% - 217px/2 + 0.5px);
+    top: 16px;
+}
+
+.Text {
+    position: static;
+    left: 32px;
+    right: 32px;
+    top: 24.49%;
+    bottom: 55.1%;
+
+    white-space: pre-line;
+
+    /* SF Headline Regular */
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    /* or 125% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.32px;
+
+    /* Light Text / Secondary */
+    color: #818C99;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 2;
+    margin: 0px 8px;
+}
