@@ -19,16 +19,7 @@ const RegularDonation = ({id, go, fetchedUser}) => (
         </PanelHeader>
         <FormLayout>
 
-            <DonationIcon>
-
-            </DonationIcon>
-            {/*<File*/}
-            {/*    className="uploader"*/}
-            {/*    mode="secondary"*/}
-            {/*    before={<Icon56GalleryOutline/>}*/}
-            {/*    controlSize="xl">*/}
-            {/*    Загрузить обложку*/}
-            {/*</File>*/}
+            <DonationIcon go={go} id='icon'/>
 
             <Input
                 type="name"

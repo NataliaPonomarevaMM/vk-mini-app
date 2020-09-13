@@ -7,6 +7,7 @@ import {PanelHeaderBack} from '@vkontakte/vkui';
 import {FormLayout, Input, Select, Textarea, File} from '@vkontakte/vkui';
 import Banner from "@vkontakte/vkui/dist/components/Banner/Banner";
 import Icon56GalleryOutline from '@vkontakte/icons/dist/56/gallery_outline';
+import DonationIcon from "./DonationIcon";
 
 class TargetDonation extends React.Component {
     constructor(props) {
@@ -32,14 +33,7 @@ class TargetDonation extends React.Component {
                 </PanelHeader>
                 <FormLayout>
 
-                    <File
-                        accept="image/*"
-                        className="uploader"
-                        mode="secondary"
-                        before={<Icon56GalleryOutline/>}
-                        controlSize="xl">
-                        Загрузить обложку
-                    </File>
+                    <DonationIcon go={go} id='icon'/>
 
                     <Input
                         type="name"

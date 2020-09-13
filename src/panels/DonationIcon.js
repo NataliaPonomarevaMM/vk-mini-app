@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {File, PanelHeaderBack} from '@vkontakte/vkui';
+import {File} from '@vkontakte/vkui';
 import {View, Panel,} from '@vkontakte/vkui';
 import Icon56GalleryOutline from "@vkontakte/icons/dist/56/gallery_outline";
 import Group from "@vkontakte/vkui/dist/components/Group/Group";
@@ -24,15 +24,6 @@ class DonationIcon extends React.Component {
             file: URL.createObjectURL(event.target.files[0])
         })
     }
-
-    // render() {
-    //     return (
-    //         <div>
-    //             <input type="file" onChange={this.handleChange}/>
-    //             <img src={this.state.file} alt=''/>
-    //         </div>
-    //     );
-    // }
 
     render() {
         return (
