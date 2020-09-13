@@ -7,6 +7,7 @@ import {PanelHeaderBack} from '@vkontakte/vkui';
 import {FormLayout, Input, Select, Textarea, File} from '@vkontakte/vkui';
 import Banner from "@vkontakte/vkui/dist/components/Banner/Banner";
 import Icon56GalleryOutline from '@vkontakte/icons/dist/56/gallery_outline';
+import DonationIcon from "./DonationIcon";
 
 const RegularDonation = ({id, go, fetchedUser}) => (
     <Panel id={id}>
@@ -14,17 +15,20 @@ const RegularDonation = ({id, go, fetchedUser}) => (
             separator={false}
             left={<PanelHeaderBack onClick={go} data-to="ctype"/>}
         >
-            Целевой сбор
+            Регулярный сбор
         </PanelHeader>
         <FormLayout>
 
-            <File
-                className="uploader"
-                mode="secondary"
-                before={<Icon56GalleryOutline/>}
-                controlSize="xl">
-                Загрузить обложку
-            </File>
+            <DonationIcon>
+
+            </DonationIcon>
+            {/*<File*/}
+            {/*    className="uploader"*/}
+            {/*    mode="secondary"*/}
+            {/*    before={<Icon56GalleryOutline/>}*/}
+            {/*    controlSize="xl">*/}
+            {/*    Загрузить обложку*/}
+            {/*</File>*/}
 
             <Input
                 type="name"
