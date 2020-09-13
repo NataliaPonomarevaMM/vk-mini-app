@@ -8,6 +8,7 @@ import Home from './panels/Home';
 import Additional from "./panels/Additional";
 import TargetDonation from "./panels/TargetDonation";
 import CollectionType from "./panels/CollectionType";
+import RegularDonation from "./panels/RegularDonation";
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
@@ -40,6 +41,7 @@ const App = () => {
 			<Additional id='additional' go={go} fetchedUser={fetchedUser}/>
 			<CollectionType id='ctype' go={go}/>
 			<TargetDonation id="targetDonation" go={go} />
+			<RegularDonation id='regularDonation' go={go} />
 		</View>
 	);
 }
