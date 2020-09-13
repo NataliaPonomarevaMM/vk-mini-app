@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
 import Button from '@vkontakte/vkui/dist/components/Button/Button';
-import Placeholder from "@vkontakte/vkui/dist/components/Placeholder/Placeholder";
-import {Div, PanelHeaderBack} from '@vkontakte/vkui';
+import {PanelHeaderBack} from '@vkontakte/vkui';
 import Select from "@vkontakte/vkui/dist/components/Select/Select";
-import Group from "@vkontakte/vkui/dist/components/Group/Group";
 import FormLayout from "@vkontakte/vkui/dist/components/FormLayout/FormLayout";
 import FormLayoutGroup from "@vkontakte/vkui/dist/components/FormLayoutGroup/FormLayoutGroup";
 import Radio from "@vkontakte/vkui/dist/components/Radio/Radio";
 import Input from "@vkontakte/vkui/dist/components/Input/Input";
+import FixedLayout from "@vkontakte/vkui/dist/components/FixedLayout/FixedLayout";
+import Separator from "@vkontakte/vkui/dist/components/Separator/Separator";
 
 const Additional = ({ id, go}) => (
     <Panel id={id}>
@@ -32,6 +32,10 @@ const Additional = ({ id, go}) => (
             <FormLayoutGroup top="Дата окончания">
                 <Input type="date" defaultValue="Выберите дату" />
             </FormLayoutGroup>
+            <FixedLayout vertical="bottom">
+                <Button size="xl">Создать сбор</Button>
+                <Separator style={{ margin: '12px 0' }} />
+            </FixedLayout>
         </FormLayout>
     </Panel>
 );
