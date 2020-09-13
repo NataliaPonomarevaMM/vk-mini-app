@@ -52,7 +52,7 @@ const App = () => {
             <TargetDonation id="targetDonation" go={go} fetchedUser={fetchedUser} donation={donation}
                             setDonation={setDonation}/>
             <RegularDonation id='regularDonation' go={go} fetchedUser={fetchedUser}/>
-            <Preview id={"preview"} go={go} fetchedUser={fetchedUser}/>
+            <Preview id={"preview"} go={go} fetchedUser={fetchedUser} donation={donation}/>
         </View>
     );
 }
