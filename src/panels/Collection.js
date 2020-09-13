@@ -4,7 +4,10 @@ import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
 import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import { PanelHeaderBack } from '@vkontakte/vkui';
-import { FormLayout, Input, Select, Textarea} from '@vkontakte/vkui';
+import { FormLayout, Input, Select, Textarea, File} from '@vkontakte/vkui';
+import Banner from "@vkontakte/vkui/dist/components/Banner/Banner";
+
+import icon from '../img/imageIcon.png';
 
 const Collection = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
@@ -15,6 +18,29 @@ const Collection = ({ id, go, fetchedUser }) => (
 			Целевой сбор
 		</PanelHeader>
 		<FormLayout>
+
+			<Banner
+				mode="image"
+				background={
+					<div
+						style={{
+							backgroundPosition: 'center center',
+							backgroundSize: 320,
+							backgroundRepeat: 'no-repeat',
+						}}
+					/>
+				}
+				actions={
+					<File
+						mode="secondary"
+						before={<img className="icon" src={icon} alt=""/>}
+						controlSize="s">
+						Загрузить обложку
+					</File>
+				}
+			/>
+
+
 			<Input
 				type="name"
 				top="Название сбора"
@@ -45,7 +71,12 @@ const Collection = ({ id, go, fetchedUser }) => (
 				<option value="1">Карта * 1337</option>
 			</Select>
 
-			<Button size="xl">Далее</Button>
+			<Button
+				size="xl"
+				onClick={go} data-to="additional"
+			>
+				Далее
+			</Button>
 		</FormLayout>
 	</Panel>
 );
