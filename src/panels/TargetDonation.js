@@ -16,23 +16,12 @@ class TargetDonation extends React.Component {
             sum: '',
             name: '',
             description: '',
-            target: '',
-            image: null,
-            buttonDisabled: true
+            target: ''
         };
     }
 
-    updateState() {
-        if (this.state.name !== ''
-            && this.state.target !== ''
-            && this.state.sum !== ''
-            && this.state.description !== '') this.setState({buttonDisabled: false});
-        else this.setState({buttonDisabled: true});
-        this.forceUpdate();
-    }
-
     render() {
-        const {id, go, fetchedUser} = this.props;
+        const {id, go, fetchedUser, donation, setDonation} = this.props;
         return (
             <Panel id={id}>
                 <PanelHeader
@@ -100,7 +89,14 @@ class TargetDonation extends React.Component {
                         || this.state.target === ''
                         || this.state.sum === ''
                         || this.state.description === ''}
-                        onClick={go} data-to="additional"
+                        onClick={e => {
+                            donation.name = this.state.name;
+                            donation.target = this.state.target;
+                            donation.description = this.state.description;
+                            donation.sum = this.sum;
+                            console.log(donation)
+                            setDonation(donation);
+                            go(e);}} data-to="additional"
                     >
                         Далее
                     </Button>
@@ -121,6 +117,12 @@ TargetDonation.propTypes = {
             title: PropTypes.string,
         }),
     }),
+    donation: PropTypes.shape({
+        name: PropTypes.string,
+        sum: PropTypes.string,
+        target: PropTypes.string,
+        description: PropTypes.string,
+    })
 };
 
 export default TargetDonation;

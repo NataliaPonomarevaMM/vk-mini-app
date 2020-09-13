@@ -13,7 +13,7 @@ import FixedLayout from "@vkontakte/vkui/dist/components/FixedLayout/FixedLayout
 import Separator from "@vkontakte/vkui/dist/components/Separator/Separator";
 import SimpleCell from "@vkontakte/vkui/dist/components/SimpleCell/SimpleCell";
 
-const Additional = ({id, go, fetchedUser}) => (
+const Additional = ({id, go, fetchedUser, donation}) => (
     <Panel id={id}>
         <PanelHeader left={<PanelHeaderBack onClick={go} data-to="targetDonation"/>}
                      className='panel'>
@@ -23,7 +23,7 @@ const Additional = ({id, go, fetchedUser}) => (
         <FormLayout>
             <Select top="Автор" placeholder="Выберите автора">
                 <option value="m">{fetchedUser.first_name} {fetchedUser.last_name}</option>
-                <option value="f">Кто-то еще</option>
+                <option value="f">{donation.name}</option>
             </Select>
 
             <FormLayoutGroup top="Сбор завершится">
@@ -52,6 +52,12 @@ Additional.propTypes = {
         city: PropTypes.shape({
             title: PropTypes.string,
         }),
+    }),
+    donation: PropTypes.shape({
+        name: PropTypes.string,
+        sum: PropTypes.string,
+        target: PropTypes.string,
+        description: PropTypes.string,
     }),
 };
 
