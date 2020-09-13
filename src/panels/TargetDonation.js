@@ -8,7 +8,7 @@ import {FormLayout, Input, Select, Textarea, File} from '@vkontakte/vkui';
 import Banner from "@vkontakte/vkui/dist/components/Banner/Banner";
 import Icon56GalleryOutline from '@vkontakte/icons/dist/56/gallery_outline';
 
-const Collection = ({id, go, fetchedUser}) => (
+const TargetDonation = ({id, go, fetchedUser}) => (
     <Panel id={id}>
         <PanelHeader
             separator={false}
@@ -67,7 +67,7 @@ const Collection = ({id, go, fetchedUser}) => (
     </Panel>
 );
 
-Collection.propTypes = {
+TargetDonation.propTypes = {
     id: PropTypes.string.isRequired,
     go: PropTypes.func.isRequired,
     fetchedUser: PropTypes.shape({
@@ -80,4 +80,4 @@ Collection.propTypes = {
     }),
 };
 
-export default Collection;
+export default TargetDonation;

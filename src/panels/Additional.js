@@ -14,7 +14,7 @@ import Separator from "@vkontakte/vkui/dist/components/Separator/Separator";
 
 const Additional = ({id, go, fetchedUser}) => (
     <Panel id={id}>
-        <PanelHeader left={<PanelHeaderBack onClick={go} data-to="collection"/>}
+        <PanelHeader left={<PanelHeaderBack onClick={go} data-to="targetDonation"/>}>
                      className='panel'>
             Дополнительно
         </PanelHeader>

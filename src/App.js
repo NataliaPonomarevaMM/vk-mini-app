@@ -6,7 +6,7 @@ import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
 import Additional from "./panels/Additional";
-import Collection from "./panels/Collection";
+import TargetDonation from "./panels/TargetDonation";
 import CollectionType from "./panels/CollectionType";
 
 const App = () => {
@@ -39,7 +39,7 @@ const App = () => {
 			<Home id='home' fetchedUser={fetchedUser} go={go} />
 			<Additional id='additional' go={go} fetchedUser={fetchedUser}/>
 			<CollectionType id='ctype' go={go}/>
-			<Collection id='collection' go={go} />
+			<TargetDonation id="targetDonation" go={go} />
 		</View>
 	);
 }

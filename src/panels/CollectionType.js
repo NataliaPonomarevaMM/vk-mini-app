@@ -7,15 +7,16 @@ import Icon28ChevronRightOutline from '@vkontakte/icons/dist/28/chevron_right_ou
 import Icon28CalendarOutline from '@vkontakte/icons/dist/28/calendar_outline';
 
 import SimpleCell from "@vkontakte/vkui/dist/components/SimpleCell/SimpleCell";
+import {PanelHeaderBack} from "@vkontakte/vkui";
 import './styles.css'
 
 const CollectionType = ({id, go, fetchedUser}) => (
     <Panel id={id} centered={true}>
-        <PanelHeader>Тип сбора</PanelHeader>
+        <PanelHeader left={<PanelHeaderBack onClick={go} data-to="home"/>}>Тип сбора</PanelHeader>
         <Div style={{width: "100%", padding:"5px"}}>
             <SimpleCell className="type_button"
                   before={<Icon28TargetOutline/>} after={<Icon28ChevronRightOutline/>}
-                  onClick={go} data-to="collection"
+                  onClick={go} data-to="targetDonation"
                   description="Когда есть определенная цель">Целевой сбор</SimpleCell>
             <SimpleCell className="type_button"
                   before={<Icon28CalendarOutline/>} after={<Icon28ChevronRightOutline/>}
