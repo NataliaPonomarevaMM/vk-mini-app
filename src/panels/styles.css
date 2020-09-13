@@ -1,0 +1,43 @@
+.panel {
+    text-align: center;
+}
+
+.type_button {
+    /* x / Base / Banner Regular */
+    /* Auto Layout */
+
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+
+    position: static;
+    left: 3.2%;
+    right: 3.2%;
+    top: 10.81%;
+    bottom: 5.41%;
+
+    /* Light Background / Content Tint Background */
+
+    background: #F5F5F5;
+    /* Light / Image Border */
+
+    border: 0.33px solid rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 1;
+    text-align: left;
+    margin: 0px 0px;
+}
+
+.uploader {
+    background: transparent;
+    border: 1px dashed var(--accent);
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
