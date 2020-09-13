@@ -12,7 +12,6 @@ class DonationIcon extends React.Component {
         super(props);
 
         this.state = {
-            activePanel: 'choose',
             file: null
         }
         this.handleChange = this.handleChange.bind(this)
@@ -20,7 +19,6 @@ class DonationIcon extends React.Component {
 
     handleChange(event) {
         this.setState({
-            activePanel: 'demo',
             file: URL.createObjectURL(event.target.files[0])
         })
     }
@@ -28,7 +26,7 @@ class DonationIcon extends React.Component {
     render() {
         if (this.state.file) {
             return (
-                <CellButton onClick={() => this.setState({activePanel: 'choose', file: null})}>
+                <CellButton onClick={() => this.setState({file: null})}>
                     <img src={this.state.file}
                          alt='HTML5'
                          style={{
@@ -53,32 +51,6 @@ class DonationIcon extends React.Component {
                 </File>
             )
         }
-        // return (
-        //     <View activePanel={this.state.activePanel} >
-        //         <Panel id="choose">
-        //             <File
-        //                 accept="image/*"
-        //                 className="uploader"
-        //                 mode="secondary"
-        //                 before={<Icon56GalleryOutline/>}
-        //                 controlSize="xl"
-        //                 onChange={this.handleChange}
-        //             >
-        //                 Загрузить обложку
-        //             </File>
-        //         </Panel>
-        //         <Panel id="demo">
-        //             <Group>
-        //                 <CellButton onClick={() => this.setState({activePanel: 'choose', file: null})}>
-        //                     <img src={this.state.file}
-        //                          alt='HTML5'
-        //                          style={{width: 351, height: 140}}
-        //                     />
-        //                 </CellButton>
-        //             </Group>
-        //         </Panel>
-        //     </View>
-        // )
     }
 }
 
