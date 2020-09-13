@@ -38,10 +38,10 @@ const App = () => {
 	return (
 		<View activePanel={activePanel} popout={popout}>
 			<Home id='home' fetchedUser={fetchedUser} go={go} />
-			<Additional id='additional' go={go} fetchedUser={fetchedUser}/>
-			<CollectionType id='ctype' go={go}/>
-			<TargetDonation id="targetDonation" go={go} />
-			<RegularDonation id='regularDonation' go={go} />
+			<Additional id='additional' go={go} fetchedUser={fetchedUser} />
+			<CollectionType id='ctype' go={go} fetchedUser={fetchedUser} />
+			<TargetDonation id="targetDonation" go={go} fetchedUser={fetchedUser} />
+			<RegularDonation id='regularDonation' go={go} fetchedUser={fetchedUser} />
 		</View>
 	);
 }
