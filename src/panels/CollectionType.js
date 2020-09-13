@@ -16,7 +16,7 @@ const CollectionType = ({id, go, fetchedUser}) => (
             <SimpleCell className="type_button"
                   before={<Icon28TargetOutline/>} after={<Icon28ChevronRightOutline/>}
                   onClick={go} data-to="collection"
-                  description="Когда есть определенная цель">Целевой сбор2</SimpleCell>
+                  description="Когда есть определенная цель">Целевой сбор</SimpleCell>
             <SimpleCell className="type_button"
                   before={<Icon28CalendarOutline/>} after={<Icon28ChevronRightOutline/>}
                   description="Если помощь нужна ежемесячно">Регулярный сбор</SimpleCell>
