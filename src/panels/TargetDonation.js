@@ -8,64 +8,107 @@ import {FormLayout, Input, Select, Textarea, File} from '@vkontakte/vkui';
 import Banner from "@vkontakte/vkui/dist/components/Banner/Banner";
 import Icon56GalleryOutline from '@vkontakte/icons/dist/56/gallery_outline';
 
-const TargetDonation = ({id, go, fetchedUser}) => (
-    <Panel id={id}>
-        <PanelHeader
-            separator={false}
-            left={<PanelHeaderBack onClick={go} data-to="ctype"/>}
-        >
-            Целевой сбор
-        </PanelHeader>
-        <FormLayout>
+class TargetDonation extends React.Component {
+    constructor(props) {
+        super(props);
 
-            <File
-                accept="image/*"
-                className="uploader"
-                mode="secondary"
-                before={<Icon56GalleryOutline/>}
-                controlSize="xl">
-                Загрузить обложку
-            </File>
+        this.state = {
+            sum: '',
+            name: '',
+            description: '',
+            target: '',
+            image: null,
+            buttonDisabled: true
+        };
+    }
 
-            <Input
-                type="name"
-                top="Название сбора"
-                placeholder="Название сбора"
-            />
+    updateState() {
+        if (this.state.name !== ''
+            && this.state.target !== ''
+            && this.state.sum !== ''
+            && this.state.description !== '') this.setState({buttonDisabled: false});
+        else this.setState({buttonDisabled: true});
+        this.forceUpdate();
+    }
 
-            <Input
-                type="number"
-                top="Сумма, ₽"
-                placeholder="Сколько нужно собрать?"
-            />
+    render() {
+        const {id, go, fetchedUser} = this.props;
+        return (
+            <Panel id={id}>
+                <PanelHeader
+                    separator={false}
+                    left={<PanelHeaderBack onClick={go} data-to="ctype"/>}
+                >
+                    Целевой сбор
+                </PanelHeader>
+                <FormLayout>
 
-            <Input
-                type="purpose"
-                top="Цель"
-                placeholder="Например, лечение человека"
-            />
+                    <File
+                        accept="image/*"
+                        className="uploader"
+                        mode="secondary"
+                        before={<Icon56GalleryOutline/>}
+                        controlSize="xl">
+                        Загрузить обложку
+                    </File>
 
-            <Textarea
-                top="Описание"
-                placeholder="На что пойдут деньги и как они кому-то помогут?"
-            />
+                    <Input
+                        type="name"
+                        top="Название сбора"
+                        placeholder="Название сбора"
+                        onChange={(e) => {
+                            this.setState({name: e.target.value});
+                        }}
+                    />
 
-            <Select
-                top="Куда получать деньги"
-            >
-                <option value="0">Счет VK Pay * 1234</option>
-                <option value="1">Карта * 1337</option>
-            </Select>
+                    <Input
+                        type="number"
+                        top="Сумма, ₽"
+                        placeholder="Сколько нужно собрать?"
+                        onChange={(e) => {
+                            this.setState({sum: e.target.value});
+                        }}
+                    />
 
-            <Button
-                size="xl"
-                onClick={go} data-to="additional"
-            >
-                Далее
-            </Button>
-        </FormLayout>
-    </Panel>
-);
+                    <Input
+                        type="purpose"
+                        top="Цель"
+                        placeholder="Например, лечение человека"
+                        onChange={(e) => {
+                            this.setState({target: e.target.value});
+                        }}
+                    />
+
+                    <Textarea
+                        top="Описание"
+                        placeholder="На что пойдут деньги и как они кому-то помогут?"
+                        onChange={(e) => {
+                            this.setState({description: e.target.value});
+                        }}
+                    />
+
+                    <Select
+                        top="Куда получать деньги"
+                    >
+                        <option value="0">Счет VK Pay · 1234</option>
+                        <option value="1">Карта · 1337</option>
+                    </Select>
+
+                    <Button
+                        size="xl"
+                        disabled={this.state.name === ''
+                        || this.state.target === ''
+                        || this.state.sum === ''
+                        || this.state.description === ''}
+                        onClick={go} data-to="additional"
+                    >
+                        Далее
+                    </Button>
+                </FormLayout>
+            </Panel>
+        );
+    }
+}
 
 TargetDonation.propTypes = {
     id: PropTypes.string.isRequired,
