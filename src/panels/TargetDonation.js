@@ -87,8 +87,7 @@ class TargetDonation extends React.Component {
                             donation.name = this.state.name;
                             donation.target = this.state.target;
                             donation.description = this.state.description;
-                            donation.sum = this.sum;
-                            console.log(donation)
+                            donation.sum = this.state.sum;
                             setDonation(donation);
                             go(e);
                         }} data-to="additional"

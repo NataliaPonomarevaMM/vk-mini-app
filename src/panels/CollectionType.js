@@ -13,7 +13,7 @@ import './styles.css'
 const CollectionType = ({id, go, fetchedUser}) => (
     <Panel id={id} centered={true}>
         <PanelHeader left={<PanelHeaderBack onClick={go} data-to="home"/>}>Тип сбора</PanelHeader>
-        <Div style={{width: "100%", padding: "5px"}}>
+        <Div style={{width: "95%", padding: "5px"}}>
             <SimpleCell className="type_button"
                         before={<Icon28TargetOutline/>} after={<Icon28ChevronRightOutline/>}
                         onClick={go} data-to="targetDonation"

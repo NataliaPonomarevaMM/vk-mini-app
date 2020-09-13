@@ -5,7 +5,9 @@ import {View, Panel,} from '@vkontakte/vkui';
 import Icon56GalleryOutline from "@vkontakte/icons/dist/56/gallery_outline";
 import Group from "@vkontakte/vkui/dist/components/Group/Group";
 import CellButton from "@vkontakte/vkui/dist/components/CellButton/CellButton";
-
+import Icon24DismissOverlay from '@vkontakte/icons/dist/24/dismiss_overlay';
+import Div from "@vkontakte/vkui/dist/components/Div/Div";
+import Banner from "@vkontakte/vkui/dist/components/Banner/Banner";
 
 class DonationIcon extends React.Component {
     constructor(props) {
@@ -26,17 +28,14 @@ class DonationIcon extends React.Component {
     render() {
         if (this.state.file) {
             return (
-                <CellButton onClick={() => this.setState({file: null})}>
+                <Div>
+                    <Icon24DismissOverlay className="dismiss"
+                                       onClick={() => this.setState({file: null})}/>
                     <img src={this.state.file}
                          alt='HTML5'
-                         style={{
-                             width: 351,
-                             height: 140,
-                             position: 'relative',
-                             left: 10
-                         }}
+                         className="wrapper"
                     />
-                </CellButton>
+                </Div>
             )
         } else {
             return (

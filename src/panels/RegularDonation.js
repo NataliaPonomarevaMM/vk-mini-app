@@ -9,62 +9,101 @@ import Banner from "@vkontakte/vkui/dist/components/Banner/Banner";
 import Icon56GalleryOutline from '@vkontakte/icons/dist/56/gallery_outline';
 import DonationIcon from "./DonationIcon";
 
-const RegularDonation = ({id, go, fetchedUser}) => (
-    <Panel id={id}>
-        <PanelHeader
-            separator={false}
-            left={<PanelHeaderBack onClick={go} data-to="ctype"/>}
-        >
-            Регулярный сбор
-        </PanelHeader>
-        <FormLayout>
+class RegularDonation extends React.Component {
+    constructor(props) {
+        super(props);
 
-            <DonationIcon/>
+        this.state = {
+            sum: '',
+            name: '',
+            description: '',
+            target: ''
+        };
+    }
 
-            <Input
-                type="name"
-                top="Название сбора"
-                placeholder="Название сбора"
-            />
+    render() {
+        const {id, go, fetchedUser, donation, setDonation} = this.props;
 
-            <Input
-                type="number"
-                top="Сумма, ₽"
-                placeholder="Сколько нужно собрать?"
-            />
+        return (<Panel id={id}>
+                <PanelHeader
+                    separator={false}
+                    left={<PanelHeaderBack onClick={go} data-to="ctype"/>}
+                >
+                    Регулярный сбор
+                </PanelHeader>
+                <FormLayout>
 
-            <Input
-                type="purpose"
-                top="Цель"
-                placeholder="Например, лечение человека"
-            />
+                    <DonationIcon/>
 
-            <Textarea
-                top="Описание"
-                placeholder="На что пойдут деньги и как они кому-то помогут?"
-            />
+                    <Input
+                        type="name"
+                        top="Название сбора"
+                        placeholder="Название сбора"
+                        onChange={(e) => {
+                            this.setState({name: e.target.value});
+                        }}
+                    />
 
-            <Select
-                top="Куда получать деньги"
-            >
-                <option value="0">Счет VK Pay * 1234</option>
-                <option value="1">Карта * 1337</option>
-            </Select>
+                    <Input
+                        type="number"
+                        top="Сумма, ₽"
+                        placeholder="Сколько нужно собрать?"
+                        onChange={(e) => {
+                            this.setState({sum: e.target.value});
+                        }}
+                    />
 
-            <Select top="Автор" placeholder="Выберите автора">
-                <option value="m">{fetchedUser.first_name} {fetchedUser.last_name}</option>
-                <option value="f">Кто-то еще</option>
-            </Select>
+                    <Input
+                        type="purpose"
+                        top="Цель"
+                        placeholder="Например, лечение человека"
+                        onChange={(e) => {
+                            this.setState({target: e.target.value});
+                        }}
+                    />
 
-            <Button
-                size="xl"
-                onClick={go} data-to="additional"
-            >
-                Далее
-            </Button>
-        </FormLayout>
-    </Panel>
-);
+                    <Textarea
+                        top="Описание"
+                        placeholder="На что пойдут деньги и как они кому-то помогут?"
+                        onChange={(e) => {
+                            this.setState({description: e.target.value});
+                        }}
+                    />
+
+                    <Select
+                        top="Куда получать деньги"
+                    >
+                        <option value="0">Счет VK Pay * 1234</option>
+                        <option value="1">Карта * 1337</option>
+                    </Select>
+
+                    <Select top="Автор" placeholder="Выберите автора">
+                        <option value="m">{fetchedUser.first_name} {fetchedUser.last_name}</option>
+                        <option value="f">Мое любимое сообщество</option>
+                    </Select>
+
+                    <Button
+                        size="xl"
+                        disabled={this.state.name === ''
+                        || this.state.target === ''
+                        || this.state.sum === ''
+                        || this.state.description === ''}
+                        onClick={e => {
+                            donation.name = this.state.name;
+                            donation.target = this.state.target;
+                            donation.description = this.state.description;
+                            donation.sum = this.state.sum;
+                            setDonation(donation);
+                            go(e);
+                        }} data-to="preview"
+                    >
+                        Далее
+                    </Button>
+                </FormLayout>
+            </Panel>
+        );
+    }
+}
 
 RegularDonation.propTypes = {
     id: PropTypes.string.isRequired,

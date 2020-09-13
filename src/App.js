@@ -51,7 +51,8 @@ const App = () => {
             <CollectionType id='ctype' go={go} fetchedUser={fetchedUser}/>
             <TargetDonation id="targetDonation" go={go} fetchedUser={fetchedUser} donation={donation}
                             setDonation={setDonation}/>
-            <RegularDonation id='regularDonation' go={go} fetchedUser={fetchedUser}/>
+            <RegularDonation id='regularDonation' go={go} fetchedUser={fetchedUser} donation={donation}
+                             setDonation={setDonation}/>
             <Preview id={"preview"} go={go} fetchedUser={fetchedUser} donation={donation}/>
         </View>
     );

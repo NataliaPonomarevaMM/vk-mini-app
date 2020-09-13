@@ -4,7 +4,7 @@ import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import {Cell, Progress, Group, Div, InfoRow} from "@vkontakte/vkui";
 
-const MyProgress = ({ id, go, fetchedUser, donation }) => {
+const MyProgress = ({ id, go, donation }) => {
     const [text, setText] = useState('Помогите первым');
     const [progressValue, setProgressValue] = useState(0);
 
@@ -19,7 +19,8 @@ const MyProgress = ({ id, go, fetchedUser, donation }) => {
                     </Div>
                 </Group>} indicator={
                 <Button mode="outline" onClick={e => {
-                    setText("Собрано 1000 ₽ из " + donation.sum)
+                    setText("Собрано 1000 ₽ из " + donation.sum + " ₽")
+                    console.info(donation.sum)
                     setProgressValue(100000 / Number.parseInt(donation.sum))
                 }}>Помочь</Button>}>
             </Cell>
@@ -30,14 +31,6 @@ const MyProgress = ({ id, go, fetchedUser, donation }) => {
 MyProgress.propTypes = {
     id: PropTypes.string.isRequired,
     go: PropTypes.func.isRequired,
-    fetchedUser: PropTypes.shape({
-        photo_200: PropTypes.string,
-        first_name: PropTypes.string,
-        last_name: PropTypes.string,
-        city: PropTypes.shape({
-            title: PropTypes.string,
-        }),
-    }),
     donation: PropTypes.shape({
         name: PropTypes.string,
         sum: PropTypes.string,
