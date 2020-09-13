@@ -4,13 +4,13 @@ import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
 import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import { PanelHeaderBack } from '@vkontakte/vkui';
-import { FormLayout, Input, Select, Textarea, Checkbox, Link} from '@vkontakte/vkui';
+import { FormLayout, Input, Select, Textarea} from '@vkontakte/vkui';
 
 const Collection = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
 		<PanelHeader
 			separator={false}
-			left={<PanelHeaderBack onClick={go} data-to="home" />}
+			left={<PanelHeaderBack onClick={go} data-to="ctype" />}
 		>
 			Целевой сбор
 		</PanelHeader>
