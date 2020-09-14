@@ -33,7 +33,7 @@ class RegularDonation extends React.Component {
                 </PanelHeader>
                 <FormLayout>
 
-                    <DonationIcon/>
+                    <DonationIcon donation={donation} setDonation={setDonation}/>
 
                     <Input
                         type="name"
