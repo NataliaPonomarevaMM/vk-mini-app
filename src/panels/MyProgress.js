@@ -14,7 +14,7 @@ const MyProgress = ({ id, go, donation }) => {
             <Cell before={
                 <Group>
                     <Div style={{width: "100%"}}>
-                        <InfoRow style={{width: "220px"}} header={text}>
+                        <InfoRow style={{width: "200px"}} header={text}>
                             <Progress value={progressValue}/>
                         </InfoRow>
                     </Div>
