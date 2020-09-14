@@ -33,7 +33,7 @@ class TargetDonation extends React.Component {
                 </PanelHeader>
                 <FormLayout>
 
-                    <DonationIcon/>
+                    <DonationIcon donation={donation}/>
 
                     <Input
                         type="name"
