@@ -24,7 +24,10 @@ class Preview extends React.Component {
                 <FormLayout>
                     <Textarea placeholder="Введите текст">
                     </Textarea>
-                    <DonationIcon/>
+                    <img src={donation.file}
+                         alt='HTML5'
+                         className="wrapper"
+                    />
                 </FormLayout>
                 <MyProgress id={id} go={go} donation={donation}/>
             </Panel>
@@ -49,6 +52,7 @@ Preview.propTypes = {
         sum: PropTypes.string,
         target: PropTypes.string,
         description: PropTypes.string,
+        file: PropTypes.string
     })
 };
 

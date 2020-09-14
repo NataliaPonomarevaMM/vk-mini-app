@@ -116,6 +116,7 @@ TargetDonation.propTypes = {
         sum: PropTypes.string,
         target: PropTypes.string,
         description: PropTypes.string,
+        file: PropTypes.string
     })
 };
 

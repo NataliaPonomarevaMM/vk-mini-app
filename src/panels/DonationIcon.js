@@ -8,6 +8,7 @@ import CellButton from "@vkontakte/vkui/dist/components/CellButton/CellButton";
 import Icon24DismissOverlay from '@vkontakte/icons/dist/24/dismiss_overlay';
 import Div from "@vkontakte/vkui/dist/components/Div/Div";
 import Banner from "@vkontakte/vkui/dist/components/Banner/Banner";
+import TargetDonation from "./TargetDonation";
 
 class DonationIcon extends React.Component {
     constructor(props) {
@@ -20,12 +21,16 @@ class DonationIcon extends React.Component {
     }
 
     handleChange(event) {
+        const {donation, setDonation} = this.props;
         this.setState({
             file: URL.createObjectURL(event.target.files[0])
         })
+        donation.file = this.state.file
+        setDonation(donation)
     }
 
-    render() {
+    render()
+    {
         if (this.state.file) {
             return (
                 <Div>
@@ -52,6 +57,16 @@ class DonationIcon extends React.Component {
             )
         }
     }
+}
+
+DonationIcon.propTypes = {
+    donation: PropTypes.shape({
+        name: PropTypes.string,
+        sum: PropTypes.string,
+        target: PropTypes.string,
+        description: PropTypes.string,
+        file: PropTypes.string
+    })
 }
 
 export default DonationIcon
