@@ -5,14 +5,32 @@ import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader
 import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import Placeholder from "@vkontakte/vkui/dist/components/Placeholder/Placeholder";
 import MyProgress from "./MyProgress";
-import {PanelHeaderBack} from "@vkontakte/vkui";
+import {FormLayout, Group, PanelHeaderBack, Textarea} from "@vkontakte/vkui";
+import DonationIcon from "./DonationIcon";
 
-const Preview = ({ id, go, fetchedUser, donation, back }) => (
-    <Panel id={id}>
-        <PanelHeader left={<PanelHeaderBack onClick={go} data-to={back}/>}>Предпросмотр</PanelHeader>
-        <MyProgress id={id} go={go} donation={donation}/>
-    </Panel>
-);
+
+class Preview extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {};
+    }
+
+    render() {
+        const {id, go, fetchedUser, donation, back} = this.props;
+        return (
+            <Panel id={id}>
+                <PanelHeader left={<PanelHeaderBack onClick={go} data-to={back}/>}>Предпросмотр</PanelHeader>
+                <FormLayout>
+                    <Textarea placeholder="Введите текст">
+                    </Textarea>
+                    <DonationIcon/>
+                </FormLayout>
+                <MyProgress id={id} go={go} donation={donation}/>
+            </Panel>
+        );
+    }
+}
 
 Preview.propTypes = {
     id: PropTypes.string.isRequired,
