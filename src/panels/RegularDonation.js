@@ -94,7 +94,6 @@ class RegularDonation extends React.Component {
                             donation.description = this.state.description;
                             donation.sum = this.state.sum;
                             setDonation(donation);
-                            setBack("regularDonation");
                             go(e);
                         }} data-to="preview"
                     >
