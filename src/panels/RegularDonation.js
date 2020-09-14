@@ -22,7 +22,7 @@ class RegularDonation extends React.Component {
     }
 
     render() {
-        const {id, go, fetchedUser, donation, setDonation} = this.props;
+        const {id, go, fetchedUser, donation, setDonation, back, setBack} = this.props;
 
         return (<Panel id={id}>
                 <PanelHeader
@@ -94,6 +94,7 @@ class RegularDonation extends React.Component {
                             donation.description = this.state.description;
                             donation.sum = this.state.sum;
                             setDonation(donation);
+                            setBack("regularDonation");
                             go(e);
                         }} data-to="preview"
                     >
