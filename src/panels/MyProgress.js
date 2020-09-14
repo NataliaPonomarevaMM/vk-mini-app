@@ -7,21 +7,23 @@ import {Cell, Progress, Group, Div, InfoRow} from "@vkontakte/vkui";
 const MyProgress = ({ id, go, donation }) => {
     const [text, setText] = useState('Помогите первым');
     const [progressValue, setProgressValue] = useState(0);
+    const [currentAmount, setCurrentAmount] = useState(0)
 
     return (
         <Panel id={id}>
             <Cell before={
                 <Group>
                     <Div style={{width: "100%"}}>
-                        <InfoRow header={text}>
+                        <InfoRow style={{width: "220px"}} header={text}>
                             <Progress value={progressValue}/>
                         </InfoRow>
                     </Div>
                 </Group>} indicator={
-                <Button mode="outline" onClick={e => {
-                    setText("Собрано 1000 ₽ из " + donation.sum + " ₽")
+                <Button mode="outline" onClick={() => {
+                    setCurrentAmount(currentAmount + 200)
+                    setText("Собрано " + currentAmount + " ₽ из " + donation.sum + " ₽")
                     console.info(donation.sum)
-                    setProgressValue(100000 / Number.parseInt(donation.sum))
+                    setProgressValue(currentAmount * 100 / Number.parseInt(donation.sum))
                 }}>Помочь</Button>}>
             </Cell>
         </Panel>

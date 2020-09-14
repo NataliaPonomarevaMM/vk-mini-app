@@ -108,6 +108,7 @@ class RegularDonation extends React.Component {
 RegularDonation.propTypes = {
     id: PropTypes.string.isRequired,
     go: PropTypes.func.isRequired,
+    back: PropTypes.string,
     fetchedUser: PropTypes.shape({
         photo_200: PropTypes.string,
         first_name: PropTypes.string,
