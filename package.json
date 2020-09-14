@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://NataliaPonomarevaMM.gitub.io/vk-mini-app/",
+  "homepage": "https://NataliaPonomarevaMM.github.io/vk-mini-app/",
   "scripts": {
     "start": "cross-env PORT=10888 HTTPS=true react-scripts start",
     "build": "react-scripts build",
