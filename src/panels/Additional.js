@@ -21,7 +21,7 @@ const Additional = ({id, go, fetchedUser, donation}) => (
         </PanelHeader>
 
         <FormLayout>
-            <Select top="Автор" placeholder="Выберите автора">
+            <Select top="Автор">
                 <option value="m">{fetchedUser.first_name} {fetchedUser.last_name}</option>
                 <option value="f">Мое любимое сообщество</option>
             </Select>

@@ -77,7 +77,7 @@ class RegularDonation extends React.Component {
                         <option value="1">Карта * 1337</option>
                     </Select>
 
-                    <Select top="Автор" placeholder="Выберите автора">
+                    <Select top="Автор">
                         <option value="m">{fetchedUser.first_name} {fetchedUser.last_name}</option>
                         <option value="f">Мое любимое сообщество</option>
                     </Select>
