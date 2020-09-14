@@ -7,6 +7,7 @@ import Placeholder from "@vkontakte/vkui/dist/components/Placeholder/Placeholder
 import MyProgress from "./MyProgress";
 import {FormLayout, Group, PanelHeaderBack, Textarea} from "@vkontakte/vkui";
 import DonationIcon from "./DonationIcon";
+import Text from "@vkontakte/vkui/dist/components/Typography/Text/Text";
 
 
 class Preview extends React.Component {
@@ -28,6 +29,7 @@ class Preview extends React.Component {
                          alt='HTML5'
                          className="wrapper"
                     />
+                    <Text weight="medium">{donation.name}</Text>
                 </FormLayout>
                 <MyProgress id={id} go={go} donation={donation}/>
             </Panel>
