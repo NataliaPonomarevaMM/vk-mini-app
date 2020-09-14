@@ -21,7 +21,7 @@ class Preview extends React.Component {
         const {id, go, fetchedUser, donation, back} = this.props;
         return (
             <Panel id={id}>
-                <PanelHeader left={<PanelHeaderBack onClick={go} data-to={back}/>}>Предпросмотр</PanelHeader>
+                <PanelHeader left={<PanelHeaderBack onClick={go} data-to={back}/>}>Предпросмотр поста</PanelHeader>
                 <FormLayout>
                     <Textarea placeholder="Введите текст">
                     </Textarea>
